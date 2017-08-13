@@ -25,38 +25,11 @@
 
 <% if(page.comments && theme.comments && theme.comments.gitment && theme.comments.gitment.username ){ %>
     <hr />
-    <h3><%- __('comment')%>:</h3>
     <div id="gitment_thread"></div>
-    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-    <script> 
-        const gitment = new Gitment({
-            owner: '<%= theme.comments.gitment.username %>',
-            repo: '<%= theme.comments.gitment.repo %>',
-            oauth: {
-                client_id: '<%= theme.comments.gitment.client_id %>',
-                client_secret: '<%= theme.comments.gitment.client_secret %>',
-            },
-        })
-        gitment.render('gitment_thread')
-    </script>
 <% } %>
 
 
 <% if(page.comments && theme.comments && theme.comments.gitalk && theme.comments.gitalk.username ){ %>
     <hr />
-    <h3><%- __('comment')%>:</h3>
     <div id="gitalk_thread"></div>
-    <script src="https://cdn.staticfile.org/babel-core/6.1.19/browser.js"></script>
-    <script type="text/babel"> 
-        const gitalk = new Gitalk({
-            owner: '<%= theme.comments.gitalk.username %>',
-            repo: '<%= theme.comments.gitalk.repo %>',
-            oauth: {
-                client_id: '<%= theme.comments.gitalk.client_id %>',
-                client_secret: '<%= theme.comments.gitalk.client_secret %>',
-            },
-        })
-        gitalk.render('gitalk_thread')
-    </script>
 <% } %>
