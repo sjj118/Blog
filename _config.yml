@@ -78,4 +78,6 @@ theme: CleanBlog
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo: https://github.com/sjj118/hexo-blog.git
+  branch: master
