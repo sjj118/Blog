@@ -13,8 +13,8 @@ timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://blog.sjj118.com
-root: /
+url: http://sjj118.github.com/hexo-blog-demo
+root: /hexo-blog-demo/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
@@ -79,5 +79,5 @@ theme: CleanBlog
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/sjj118/hexo-blog.git
+  repo: https://github.com/sjj118/hexo-blog-demo.git
   branch: master
