@@ -1,0 +1,58 @@
+# Header
+menu:
+	Home: /
+	Tags: /tags
+	About: /about
+
+# Title on top left of menu. Leave empty to use main blog title
+menu_title: 
+
+# URL of the Home page image
+index_cover: /img/home-bg.jpg
+
+# Default post title
+default_post_title: Untitled
+
+# Comments. Choose one by filling up the information
+comments:
+# Disqus comments
+	disqus_shortname:
+# Facebook comments
+	facebook:
+		appid:
+		comment_count: 5
+		comment_colorscheme: light
+# Gitalk comments
+	gitalk:
+		username: sjj118
+		repo: sjj118.github.io
+		client_id: 5099afc263addd98be13
+		client_secret: 79401012bcd210085b59e2d0985924a7f745369e
+# Gitment comments
+	gitment:
+		username: sjj118
+		repo: sjj118.github.io
+		client_id: 5099afc263addd98be13
+		client_secret: 79401012bcd210085b59e2d0985924a7f745369e
+  
+# Never use Google fonts
+use_font_lato: false
+
+# Google Analytics Tracking ID
+google_analytics:
+
+# Addthis ID
+addthis:
+
+# set your own favicon
+favicon:
+
+# Social Accounts
+twitter_url:
+twitter_handle:
+facebook_url:
+github_url: https://github.com/sjj118
+zhihu_url: https://www.zhihu.com/people/sjj118
+gitlab_url:
+linkedin_url:
+mailto:
