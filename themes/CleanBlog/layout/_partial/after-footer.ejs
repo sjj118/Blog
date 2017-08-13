@@ -47,12 +47,12 @@
     <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
     <script> 
         const gitalk = new Gitalk({
-            owner: '<%= theme.comments.gitalk.username %>',
-            repo: '<%= theme.comments.gitalk.repo %>',
-            oauth: {
-                client_id: '<%= theme.comments.gitalk.client_id %>',
-                client_secret: '<%= theme.comments.gitalk.client_secret %>',
-            },
+            clientID: '<%= theme.comments.gitment.client_id %>',
+            clientSecret: '<%= theme.comments.gitment.client_secret %>',
+            repo: '<%= theme.comments.gitment.repo %>',
+            owner: '<%= theme.comments.gitment.username %>',
+            admin: ['<%= theme.comments.gitment.username %>'],
+            distractionFreeMode: false
         })
         gitalk.render('gitalk_thread')
     </script>
