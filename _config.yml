@@ -13,8 +13,8 @@ timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://blog.sjj118.com/hexo-blog-demo
-root: /hexo-blog-demo/
+url: http://blog.sjj118.com
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
@@ -39,8 +39,8 @@ post_asset_folder: false
 relative_link: false
 future: true
 highlight:
-  enable: true
-  line_number: true
+  enable: false
+  line_number: false
   auto_detect: false
   tab_replace:
   
@@ -75,9 +75,21 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: CleanBlog
 
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
   repo: https://github.com/sjj118/hexo-blog-demo.git
   branch: master
+
+marked:
+  gfm: true
+  pedantic: false
+  sanitize: false
+  tables: true
+  breaks: true
+  smartLists: true
+  smartypants: true
+  modifyAnchors: '#'
+  autolink: true

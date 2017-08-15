@@ -5,6 +5,8 @@ subtitle: a new start
 date: 2017-1-5
 author: sjj118
 header-img: "img/post-bg-welcome.jpg"
+tags:
+    - 博客
 ---
 
 ### 欢迎来到我的新博客
@@ -24,3 +26,5 @@ header-img: "img/post-bg-welcome.jpg"
 新博客上不打算像以前一样给每道题写题解了，主要是总结，题解也是一堆题目一起发一个比较简短的题解，也不会放代码。
 
 希望你喜欢这个博客。
+
+++Inserted++
