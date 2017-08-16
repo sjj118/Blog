@@ -28,17 +28,6 @@
                         </li>
                     <% } %>
 
-                    <% if (theme.github_url) { %>
-                        <li>
-                            <a href="<%- theme.github_url%>" target="_blank">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                    <% } %>
-
                     <% if (theme.linkedin_url) { %>
                         <li>
                             <a href="<%- theme.linkedin_url%>" target="_blank">
@@ -56,6 +45,17 @@
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    <% } %>
+
+                    <% if (theme.github_url) { %>
+                        <li>
+                            <a href="<%- theme.github_url%>" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
                                 </span>
                             </a>
                         </li>
