@@ -29,7 +29,7 @@ comments:
 		client_secret: 79401012bcd210085b59e2d0985924a7f745369e
 # Gitment comments
 	gitment:
-		username: sjj118
+		username: 
 		repo: hexo-blog-demo
 		client_id: 5099afc263addd98be13
 		client_secret: 79401012bcd210085b59e2d0985924a7f745369e

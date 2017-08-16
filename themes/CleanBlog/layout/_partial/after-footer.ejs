@@ -44,7 +44,7 @@
 <!-- Gitalk Comments -->
 <% if(page.comments && theme.comments && theme.comments.gitalk && theme.comments.gitalk.username ){ %>
     <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script src="https://unpkg.com/gitalk/dist/gitalk.js"></script>
     <script> 
         const gitalk = new Gitalk({
             clientID: '<%= theme.comments.gitment.client_id %>',
