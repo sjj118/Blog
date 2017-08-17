@@ -8,13 +8,14 @@
                 <%- item.subtitle %>
             </h3>
         <% } %>
+        <div class="post-content-preview"><%- item.excerpt %></div>
     </a>
     <p class="post-meta">
-        <!-- Date and Author -->
-        <% if(item.author) { %>
-            Posted by <%- item.author %> on
-        <% } %>
-        <%= item.date.format(config.date_format) %>
+    <!-- Date and Author -->
+    <% if(item.author) { %>
+        Posted by <%- item.author %> on
+    <% } %>
+    <%= item.date.format(config.date_format) %>
     </p>
 </div>
 <hr>

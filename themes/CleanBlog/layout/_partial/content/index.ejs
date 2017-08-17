@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <% page.posts.each(function(item){ %>
+                <div class="post-preview">
+                    <a href="<%- config.root %><%- item.path %>">
+                        <h2 class="post-title">
+                            <%- item.title || theme.default_post_title || "Untitled" %>
+                        </h2>
+                        <% if (item.subtitle && item.subtitle.length) { %>
+                            <h3 class="post-subtitle">
+                                <%- item.subtitle %>
+                            </h3>
+                        <% } %>
+                        <div class="post-content-preview"><%- item.excerpt %></div>
+                    </a>
+                    <p class="post-meta">
+                    <!-- Date and Author -->
+                    <% if(item.author) { %>
+                        Posted by <%- item.author %> on
+                    <% } %>
+                    <%= item.date.format(config.date_format) %>
+                    </p>
+                </div>
+                <hr>
+            <% }); %>
+
+            <%- partial('_partial/pagination') %>
+        </div>
+    </div>
+</div>
+

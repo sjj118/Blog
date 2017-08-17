@@ -1,0 +1,25 @@
+<header class="intro-header" style="background-image: url('<%- item.cover || theme.index_cover %>')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1><%- item.title || theme.default_post_title || "Untitled" %></h1>
+                    <% if (item.subtitle && item.subtitle.length) { %>
+                        <h2 class="post-subheading">
+                            <%- item.subtitle %>
+                        </h2>
+                    <% } %>
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        <% if(item.author) { %>
+                            Posted by <%- item.author %> on
+                        <% } %>
+                        <% if(item.date) { %>
+                            <%= item.date.format(config.date_format) %>
+                        <% } %>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
