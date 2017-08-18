@@ -205,18 +205,6 @@ hr.small
   border-bottom-right-radius 5px
   border-bottom-left-radius 5px
 
-.post-tags, .post-categories
-  font-size 15px
-  margin-top 30px
-  margin-bottom 30px
-  a
-    border-bottom 1px dotted #ABABAB
-    text-transform uppercase
-    margin-right 10px
-    &:hover, &:visited, &:active
-      text-decoration none
-      border-bottom none
-
 .archive-before-pagination
   height 30px
 footer
@@ -384,5 +372,30 @@ body
 .page-fullscreen footer .copyright a:hover {
  color:#ddd
 }
-hr {
+
+.post-tags {
+    margin-bottom: -5px
+}
+.post-tags a, .post-tags .tag {
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, .8);
+    border-radius: 999em;
+    padding: 0 10px;
+    color: #fff;
+    line-height: 24px;
+    font-size: 12px;
+    text-decoration: none;
+    margin: 0 1px;
+    margin-bottom: 6px;
+}
+@media only screen and (min-width:768px) {
+    .post-tags a, .post-tags .tag {
+        margin-right: 5px;
+    }
+}
+.post-tags a:hover, .post-tags .tag:hover, .post-tags a:active, .post-tags .tag:active {
+    color: #fff;
+    border-color: #fff;
+    background-color: rgba(255, 255, 255, .4);
+    text-decoration: none
 }
