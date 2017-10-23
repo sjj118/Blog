@@ -24,13 +24,13 @@ comments:
 # Gitalk comments
 	gitalk:
 		username: sjj118
-		repo: hexo-blog-demo
+		repo: sjj118.github.io
 		client_id: 5099afc263addd98be13
 		client_secret: 79401012bcd210085b59e2d0985924a7f745369e
 # Gitment comments
 	gitment:
 		username: 
-		repo: hexo-blog-demo
+		repo: sjj118.github.io
 		client_id: 5099afc263addd98be13
 		client_secret: 79401012bcd210085b59e2d0985924a7f745369e
   

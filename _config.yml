@@ -81,7 +81,7 @@ theme: CleanBlog
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/sjj118/hexo-blog-demo.git
+  repo: https://github.com/sjj118/sjj118.github.io.git
   branch: master
 
 marked:
