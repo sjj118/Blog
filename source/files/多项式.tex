@@ -1,0 +1,171 @@
+\documentclass{beamer}
+\usepackage[UTF8,noindent]{ctexcap}
+\usepackage{amsmath}
+\usetheme{Copenhagen}
+\begin{document}
+\title{多项式简介}
+\author{史记}
+\date{\today}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}{系数表示法}
+定义n次多项式为$A(x)=\sum_{i=0}^{n}a_ix^i=a_0+a_1x+a_2x^2+...+a_nx^n$\\
+a是这个多项式的系数数组\\
+最常用的表示多项式的方法就是用系数数组表示\\
+\end{frame}
+
+\begin{frame}{多项式的基本运算}
+令A和B为两个n次多项式\\
+加减：$(A\pm B)(x)=A(x)\pm B(x)=\sum_{i=0}^{n}(a_{i}\pm b_{i})x^{i}$\\
+乘法：$(A\times B)(x)=\sum_{i=0}^{n}\sum_{j=0}^{n}a_{i}b_{j}x^{i+j}$
+\end{frame}
+
+\begin{frame}{多项式的点值表示法}
+\begin{block}{定理}
+已知平面上n个横坐标不同的点，则有且仅有1个n-1次多项式经过这n个点。
+\end{block}
+\pause
+于是就有了另一种表示多项式的方法：用多项式曲线上n-1个点的坐标表示
+\end{frame}
+
+\begin{frame}{点值表示法与系数表示法的转换}
+\begin{itemize}
+\item 系数表示法->点值表示法：\\
+随便取n+1个不同的数作为横坐标代进去\\
+\pause
+\item 点值表示法->系数表示法：\\
+称为插值\\
+常用算法是拉格朗日插值法，后面会介绍\\
+\end{itemize}
+\end{frame}
+
+\begin{frame}{点值表示法下的基本运算}
+设插值所用的横坐标为$x_0,x_1,...x_n$\\
+L表示插值函数\\
+$A(x)=L(A(x_0),A(x_1),...,A(x_n)),B(x)=L(B(x_0),B(x_1),...,B(x_n))$\\
+\pause
+加减：$(A\pm B)(x)=L((A\pm B)(x_0),(A\pm B)(x_1),...,(A\pm B)(x_n))=L(A(x_0)\pm B(x_0),A(x_1)\pm B(x_1),...,A(x_n)\pm B(x_n))$\\
+\pause
+乘法：$(A\times B)(x)=L((A\times B)(x_0),(A\times B)(x_1),...(A\times B)(x_n))=L(A(x_0)\times B(x_0),A(x_1)\times B(x_1),...,A(x_n)\times B(x_n))$
+\end{frame}
+
+\begin{frame}{快速傅立叶变换}
+FFT可以在$O(nlogn)$的时间复杂度内将多项式在系数表示法和点值表示法之间转换，但是点值表示法的点的横坐标必须是特定的几个点\\
+这些点的横坐标是$\omega_n^1,\omega_n^2,...\omega_n^n$\\
+$\omega_n$是复数，表示n次单位根\\
+FFT的过程这里不深入探究\\
+如果要计算两个系数表示的多项式的乘积的系数表示，就可以先转换成点值表示，然后相乘，再插值回去
+\end{frame}
+
+\begin{frame}{拉格朗日插值}
+FFT只能从特定的横坐标插值，如果想要从任意点插值，就要使用拉格朗日插值法了\\
+\pause
+设已知n+1个点为$(x_0,y_0),(x_1,y_1),...,(x_n,y_n)$\\
+假设我们找到了n+1个函数$c_i(x)$满足$c_i(x)=\left\{
+\begin{array}{ll}
+
+1&\text{$x=x_i$}\\
+
+0&\text{$x=x_j,i\neq j$}
+
+\end{array}\right.
+$\\
+\pause
+那么插值出的函数可以表示成$$F(x)=\sum_{i=0}^{n}c_i(x)y_i=c_0(x)y_0+c_1(x)y_1+...+c_n(x)y_n$$\\
+\pause
+$$c_i(x)=\frac{\prod_{j\neq i}(x-x_j)}{\prod_{j\neq i}(x_i-x_j)}$$
+
+\end{frame}
+
+\begin{frame}{拉格朗日插值}
+如何求$\prod_{j\neq i}(x-x_j)$\\
+分治+FFT: $O(n^2log^2n)$\\
+\pause
+如果不需求多项式的系数，只是要求多项式在某点的值F(t)\\
+那只要求$\prod_{j\neq i}(t-x_j)$\\
+可以$O(n)$预处理前缀积和后缀积，然后就可以求出每个j的$\prod_{j\neq i}(t-x_j)$\\
+如果插值点的横坐标是等差数列的话，则可以$O(n)$计算出分母\\
+\end{frame}
+
+\begin{frame}{例题：如何优雅地求和}
+有一个多项式函数$f(x)$，最高次幂为$x^m$，定义变换$Q$：
+$$Q(f,n,x)=\sum_{k=0}^{n}f(k)\binom{n}{k}x^k(1-x)^{n-k}$$
+现在给定函数 f 和数字 n, x，求 Q(f,n,x) mod 998244353\\
+$n\leqslant 10^9,m\leqslant 2*10^4$\\
+tip: 可以发现Q(f)是关于n的m次函数\\
+\pause
+先求出Q(f,0,x),Q(f,1,x),...,Q(f,m,x)\\
+然后插值即可求出Q(f,n,x)\\
+$O(m^2)$卡卡常就能过了\\
+\end{frame}
+
+\begin{frame}{生成函数的定义}
+对于一个数列$a_0,a_1,...,a_n$\\
+称函数$A(x)=\sum_{i=0}^{n}a_{i}x^{i}$是它的生成函数\\
+\pause
+那生成函数有什么用？\\
+\end{frame}
+
+\begin{frame}{例题：[BZOJ3028]食物}
+\only<1-3>{小明要去买吃的，每种食物的个数限制如下：\\}
+\scriptsize
+\begin{tabular}{ll}
+\onslide<1->汉堡：偶数个 & \onslide<3->$x^0+x^2+x^4+...=\frac{1}{1-x^2}$\\
+\onslide<1->可乐：0个或1个 & \onslide<3->$x^0+x^1=\frac{1-x^2}{1-x}$\\
+\onslide<1->鸡腿：0个，1个或2个 & \onslide<3->$x^0+x^1+x^2=\frac{1-x^3}{1-x}$\\
+\onslide<1->蜜桃：奇数个 & \onslide<3->$x^1+x^3+x^5+...=\frac{x}{1-x^2}$\\
+\onslide<1->鸡块：4的倍数个 & \onslide<3->$x^0+x^4+x^8+...=\frac{1}{1-x^4}$\\
+\onslide<1->包子：0个，1个，2个或3个 & \onslide<3->$x^0+x^1+x^2+x^3=\frac{1-x^4}{1-x}$\\
+\onslide<1->土豆：不超过一个 & \onslide<3->$x^0+x^1=\frac{1-x^2}{1-x}$\\
+\onslide<1->面包：3的倍数个 & \onslide<3->$x^0+x^3+x^6+...=\frac{1}{1-x^3}$\\
+\end{tabular}\\
+\normalsize
+\onslide<1->
+\only<1-3>{求恰好买n个的方案数\\}
+\pause
+\only<2-3>{
+以汉堡为例\\
+设$a_i$表示买i个汉堡的方案数\\
+则a的生成函数$A(x)=x^0+x^2+x^4+...=\frac{1}{1-x^2}$\\
+}
+\pause
+\only<3>{
+同理得到其他食物的生成函数\\}
+\pause
+把这些式子都乘起来，思考每一项系数的意义\\
+\pause
+$x^n$的系数就代表买n个的方案数\\
+\pause
+发现全乘起来之后等于$\frac{x}{(1-x)^4}$\\
+需要转换成正常的系数形式\\
+通过广义二项式定理可知$x^n$的系数是$\binom{n+2}{3}$
+\end{frame}
+
+\begin{frame}{生成函数与斐波那契数列}
+设斐波那契数列为f\\
+$f_0=1,f_1=1,f_2=2,f_3=3,f_4=5,...$\\
+设f的生成函数为F(x)\\
+\pause
+因为$f_n=f_{n-1}+f_{n-2}$\\
+所以$F(x)=xF(x)+x^2F(x)+1$\\
+为什么？\\
+\pause
+$$
+\begin{aligned}
+&F(x)=1+x+2x^2+3x^3+5x^4+...\\
+&xF(x)+x^2F(x)+1\\
+&=(x+x^2+2x^3+3x^4+...)+(x^2+x^3+2x^4+...)+1\\
+&=1+x+2x^2+3x^3+5x^4+...\\
+\end{aligned}
+$$
+\end{frame}
+
+\begin{frame}{生成函数与斐波那契数列}
+$F(x)=xF(x)+x^2F(x)+1$\\
+$F(x)=\frac{1}{1-x-x^2}$
+\end{frame}
+
+\end{document}
