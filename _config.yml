@@ -94,3 +94,15 @@ marked:
   smartypants: true
   modifyAnchors: '#'
   autolink: true
+
+math:
+  engine: 'katex' # or 'mathjax' 
+  mathjax:
+    src: custom_mathjax_source
+    config:
+      # MathJax config 
+  katex:
+    css: custom_css_source
+    js: custom_js_source # not used 
+    config:
+      # KaTeX config 
