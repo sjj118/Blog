@@ -2,6 +2,7 @@
 layout: post
 title: Welcome
 subtitle: a new start
+id: NewStart
 date: 2017-1-5
 author: sjj118
 header-img: "img/post-bg-welcome.jpg"

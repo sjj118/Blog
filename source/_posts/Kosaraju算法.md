@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "Kosaraju 算法"
-author: "sjj118"
+title: Kosaraju 算法
+id: KosarajuAlgorithm
+author: sjj118
 date: 2017-2-2
 catalog: true
 tags:

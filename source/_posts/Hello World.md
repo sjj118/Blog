@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Hello World
+id: HelloWorld
 date: 2016-1-1
 author: sjj118
 tags:

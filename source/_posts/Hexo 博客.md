@@ -1,5 +1,6 @@
 ---
 title: Hexo 博客
+id: HexoBlog
 author: sjj118
 date: 2017-10-23
 tags:
