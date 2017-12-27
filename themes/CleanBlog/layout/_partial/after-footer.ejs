@@ -8,59 +8,61 @@
 <!-- Gallery -->
 <script src="https://cdn.staticfile.org/featherlight/1.7.1/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 
-<!-- Disqus Comments -->
-<% if (theme.comments && theme.comments.disqus_shortname){ %>
-    <script type="text/javascript">
-        var disqus_shortname = '<%= theme.comments.disqus_shortname %>';
+<!-- Comments -->
+<% if (theme.comments && page.comments) %>
+    <!-- Disqus Comments -->
+    <% if (theme.comments.disqus_shortname){ %>
+        <script type="text/javascript">
+            var disqus_shortname = '<%= theme.comments.disqus_shortname %>';
 
-        (function(){
-            var dsq = document.createElement('script');
-            dsq.type = 'text/javascript';
-            dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/<% if (page.comments){ %>embed.js<% } else { %>count.js<% } %>';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        }());
-    </script>
-<% } %>
+            (function(){
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/<% if (page.comments){ %>embed.js<% } else { %>count.js<% } %>';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            }());
+        </script>
+    <% } %>
 
-<!-- Gitment Comments -->
-<% if(page.comments && theme.comments && theme.comments.gitment && theme.comments.gitment.username ){ %>
-    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-    <script> 
-        const gitment = new Gitment({
-            owner: '<%= theme.comments.gitment.username %>',
-            repo: '<%= theme.comments.gitment.repo %>',
-            oauth: {
-                client_id: '<%= theme.comments.gitment.client_id %>',
-                client_secret: '<%= theme.comments.gitment.client_secret %>',
-            },
-        })
-        gitment.render('gitment_thread')
-    </script>
-<% } %>
+    <!-- Gitment Comments -->
+    <% if(theme.comments.gitment && theme.comments.gitment.username ){ %>
+        <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+        <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+        <script> 
+            const gitment = new Gitment({
+                owner: '<%= theme.comments.gitment.username %>',
+                repo: '<%= theme.comments.gitment.repo %>',
+                oauth: {
+                    client_id: '<%= theme.comments.gitment.client_id %>',
+                    client_secret: '<%= theme.comments.gitment.client_secret %>',
+                },
+            })
+            gitment.render('gitment_thread')
+        </script>
+    <% } %>
 
 
-<!-- Gitalk Comments -->
-<% if(page.comments && theme.comments && theme.comments.gitalk && theme.comments.gitalk.username ){ %>
-    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-    <script src="https://unpkg.com/gitalk/dist/gitalk.js"></script>
-    <script> 
-        const gitalk = new Gitalk({
-            clientID: '<%= theme.comments.gitalk.client_id %>',
-            clientSecret: '<%= theme.comments.gitalk.client_secret %>',
-            repo: '<%= theme.comments.gitalk.repo %>',
-            owner: '<%= theme.comments.gitalk.username %>',
-            admin: ['<%= theme.comments.gitalk.username %>'],
-            distractionFreeMode: false
-        })
-        gitalk.render('gitalk_thread')
-    </script>
-<% } %>
+    <!-- Gitalk Comments -->
+    <% if(theme.comments.gitalk && theme.comments.gitalk.username ){ %>
+        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+        <script src="https://unpkg.com/gitalk/dist/gitalk.js"></script>
+        <script> 
+            const gitalk = new Gitalk({
+                clientID: '<%= theme.comments.gitalk.client_id %>',
+                clientSecret: '<%= theme.comments.gitalk.client_secret %>',
+                repo: '<%= theme.comments.gitalk.repo %>',
+                owner: '<%= theme.comments.gitalk.username %>',
+                admin: ['<%= theme.comments.gitalk.username %>'],
+                distractionFreeMode: false
+            })
+            gitalk.render('gitalk_thread')
+        </script>
+    <% } %>
 
 
 <!-- anchor-js -->
-<% if(theme.anchor){ %>
+<% if(theme.anchor && page.anchor){ %>
     <script src="https://cdn.bootcss.com/anchor-js/4.1.0/anchor.min.js"></script>
     <script>
         anchors.options = {

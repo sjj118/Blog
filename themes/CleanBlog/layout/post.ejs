@@ -1,2 +1,6 @@
+<%
+    if(page.comment==null)page.comment=true
+    if(page.anchor==null)page.anchor=true
+%>
 <%- partial('_partial/banner/post',{item: page}) %>
 <%- partial('_partial/content/post', {item: page}) %>

@@ -1,4 +1,4 @@
-<% if(page.comments && theme.comments && theme.comments.disqus_shortname){ %>
+<% if(theme.comments.disqus_shortname){ %>
     <hr />
     <h3><%- __('comment')%>:</h3>
     <div id="disqus_thread">
@@ -6,7 +6,7 @@
     </div>
 <% } %>
 
-<% if(page.comments && theme.comments && theme.comments.facebook && theme.comments.facebook.appid) { %>
+<% if(theme.comments.facebook && theme.comments.facebook.appid) { %>
     <hr />
     <h3><%- __('comment')%>:</h3>
     <div id="fb-root"></div>
@@ -23,13 +23,13 @@
     <div class="fb-comments" data-href="<%= url %>" data-num-posts="<%= theme.comments.facebook.comment_count %>" data-width="100%" data-colorscheme="<%= theme.comments.facebook.comment_colorscheme %>"></div>
 <% } %>
 
-<% if(page.comments && theme.comments && theme.comments.gitment && theme.comments.gitment.username ){ %>
+<% if(theme.comments.gitment && theme.comments.gitment.username ){ %>
     <hr />
     <div id="gitment_thread"></div>
 <% } %>
 
 
-<% if(page.comments && theme.comments && theme.comments.gitalk && theme.comments.gitalk.username ){ %>
+<% if(theme.comments.gitalk && theme.comments.gitalk.username ){ %>
     <hr />
     <div id="gitalk_thread"></div>
 <% } %>

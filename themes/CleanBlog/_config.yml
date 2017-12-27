@@ -37,7 +37,7 @@ comments:
 		client_secret: 79401012bcd210085b59e2d0985924a7f745369e
   
 # Never use Google fonts
-use_font_lato: false
+use_font_lato: true
 
 # Google Analytics Tracking ID
 google_analytics:

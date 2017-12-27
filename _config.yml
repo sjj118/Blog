@@ -82,14 +82,3 @@ deploy:
   type: git
   repo: https://github.com/sjj118/sjj118.github.io.git
   branch: master
-
-  #marked:
-  #  gfm: true
-  #  pedantic: false
-  #  sanitize: false
-  #  tables: true
-  #  breaks: true
-  #  smartLists: true
-  #  smartypants: true
-  #  modifyAnchors: '#'
-  #  autolink: true
