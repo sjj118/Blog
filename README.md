@@ -8,7 +8,7 @@ docker create --name hexo-server \
 -v ~/Blog/_config.yml:/website/_config.yml:ro \
 -v ~/Blog/source:/website/source:ro \
 -v ~/Blog/themes:/website/themes:ro \
-sjj118/blog:test hexo server
+sjj118/blog hexo server
 ```
 
 
@@ -21,5 +21,5 @@ docker create --name hexo-deploy -t \
 -v ~/Blog/themes:/website/themes:ro \
 -v ~/.gitconfig:/root/.gitconfig:ro \
 -v ~/.ssh:/root/.ssh:ro \
-sjj118/blog:test hexo deploy
+sjj118/blog hexo deploy
 ```
