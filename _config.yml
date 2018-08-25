@@ -80,5 +80,15 @@ theme: CleanBlog
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/sjj118/sjj118.github.io.git
+  repo: git@github.com:sjj118/sjj118.github.io.git
   branch: master
+  name: sjj118
+  email: i@sjj118.com
+
+# Pandoc
+pandoc:
+  filters:
+  extra:
+  template:
+  meta:
+  mathEngine: katex
