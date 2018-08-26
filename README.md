@@ -26,8 +26,9 @@ docker create --name hexo-deploy -t \
 -v ~/.ssh:/root/.ssh:ro \
 -v $BlogDir/.deploy_git:/website/.deploy_git \
 sjj118/blog sh -c "hexo clean && hexo deploy"
+# If you prefer to clear the old commit at each deployment, delete this line: -v $BlogDir/.deploy_git:/website/.deploy_git \
 
-# Clone the old deployed file (optional)
+# Clone the old deployed file from your git repo
 git clone https://github.com/sjj118/sjj118.github.io.git $BlogDir/.deploy_git
 ```
 
