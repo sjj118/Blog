@@ -4,7 +4,7 @@
 
 Preview and deploy the hexo blog within the docker image.
 
-## Init
+## Initialization
 
 ```bash
 # Set your hexo blog root directory
