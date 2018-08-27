@@ -9,7 +9,7 @@ Preview and deploy the hexo blog within the docker image.
 ```bash
 # Set your hexo blog root directory
 BlogDir=~/Blog
-# Remember to put your *_config.yml*, *source* and *themes" into the above directory
+# Remember to put your "_config.yml", "source" and "themes" into the above directory
 
 # Create the preview container
 docker create --name hexo-server \
