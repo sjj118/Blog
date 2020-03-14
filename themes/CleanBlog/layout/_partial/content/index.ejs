@@ -12,7 +12,7 @@
                                 <%- item.subtitle %>
                             </h3>
                         <% } %>
-                        <div class="post-content"><%- truncate(strip_html(item.content),200) %></div>
+                        <div class="post-content"><%- strip_html(item.content).slice(0,200)+'......' %></div>
                     </a>
                     <p class="post-meta">
                     <!-- Date and Author -->
