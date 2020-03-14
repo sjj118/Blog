@@ -38,7 +38,7 @@ tags:
 
 首先，介绍一个关于排列与置换很常用的模型。如果有 $n$ 个点，每个点 $k$ 有一条连向点 $p(k)$ 的有向边，那么这个图中每个点的出度和入度都为 $1$，因此这个图是由若干个环组成的。我们称一个环中编号最小的那个节点为环头，即满足 $k<p(k),k<p(p(k)),k<p(p(p(k))),\cdots$ 的点 $k$。算法的主要步骤就是对于每一个点，判断它是不是环头，如果是环头的话，则沿着这个环进行置换，即临时记录下 $x_k$，令 $x_k=x_{p(k)},x_{p(k)}=x_{p(p(x))},\cdots$，直到绕环一圈回到环头。算法的伪代码如下，其中每一行被执行的次数被标在右侧：	
 
-![in situ pseudo](/img/in situ pseudo.png)
+![](/img/in situ pseudo.png)
 
 ### 复杂度分析
 
@@ -48,7 +48,7 @@ tags:
 
 ### 对 $b$ 的分析
 
-$b$ 的值，即环的个数，即环头个数，即满足 $\displaystyle q(j)=\min_{1\leqslant i\leqslant j}q(i)$ 的 $j$ 的个数。环头个数为 $k$ 的排列个数为第一类斯特林数 $\genfrac{[}{]}{0}{}{n}{k}$（这就是第二类斯特林数的定义）。接下来证明 $b$ 的期望值是调和级数 $H_n=1+\frac{1}{2}+\cdots+\frac{1}{n}$。我们设
+$b$ 的值，即环的个数，即环头个数，即满足 $\displaystyle q(j)=\min_{1\leqslant i\leqslant j}q(i)$ 的 $j$ 的个数。环头个数为 $k$ 的排列个数为第一类斯特林数 $\displaystyle{n \brack k}$（这就是第二类斯特林数的定义）。接下来证明 $b$ 的期望值是调和级数 $H_n=1+\frac{1}{2}+\cdots+\frac{1}{n}$。我们设
 $$
 x_j=\left\{\begin{array}{ll}
 1,&\text{ if } q(i)>q(j) \text{ for } 1\leqslant i<j \text{ ; }\\
